@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ankush-python-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ankush-python-app
+  template:
+    metadata:
+      labels:
+        app: ankush-python-app
+    spec:
+      containers:
+        - name: ankush-python-app
+          image: ankushdockerhub/python:latest
+          ports:
+            - containerPort: 8080
