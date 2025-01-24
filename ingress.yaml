@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ankush-python-app-ingress
+spec:
+  rules:
+    - host: ankush-python-app.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ankush-python-app-service
+                port:
+                  number: 80
